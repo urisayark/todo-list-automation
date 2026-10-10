@@ -14,8 +14,10 @@ The project follows the Page Object Model (POM) to improve code reusability and 
 ## Project Structure
 
 ```text
-
 todo-list-automation/
+├── .github/
+│   └── workflows/
+│       └── playwright.yml
 ├── pages/
 │   └── TodoPage.ts
 ├── tests/
@@ -27,9 +29,10 @@ todo-list-automation/
 └── README.md
 ```
 
-- `pages/TodoPage.ts`: Page locators and reusable actions.
-- `tests/todo.spec.ts`: Automated test cases and assertions.
+- `TodoPage.ts`: Page locators and reusable actions.
+- `todo.spec.ts`: Automated test cases and assertions.
 - `playwright.config.ts`: Browser and test configuration.
+- `.github/workflows/playwright.yml`: GitHub Actions workflow for automated test execution.
 
 ## Test Cases
 
@@ -50,12 +53,10 @@ todo-list-automation/
 
 ## Prerequisites
 
-Install the following before setup:
-
 - [Node.js](https://nodejs.org/) (LTS version recommended)
 - Git
 
-Verify the installation:
+Verify installation:
 
 ```bash
 node -v
@@ -65,34 +66,31 @@ git --version
 
 ## Setup
 
-1. Clone the repository:
+Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/urisayark/todo-list-automation.git
 cd todo-list-automation
-npm ci
-npx playwright install chromium
 ```
 
-2. Install project dependencies:
+Install dependencies:
 
 ```bash
 npm ci
 ```
 
-3. Install the Chromium browser:
+Install Chromium:
 
 ```bash
 npx playwright install chromium
 ```
-
 
 ## Run Tests
 
 Run all test cases:
 
 ```bash
-npm test
+npx playwright test
 ```
 
 Run a specific test case:
@@ -104,16 +102,15 @@ npx playwright test --grep "TC01"
 Run tests with a visible browser:
 
 ```bash
-npm run test:headed
+npx playwright test --headed
 ```
 
 View the HTML report:
 
 ```bash
-npm run report
+npx playwright show-report
 ```
 
 ## Design Approach
 
 The Page Object Model separates page interactions from test scenarios. Reusable methods are maintained in `TodoPage.ts`, while test scenarios and assertions are defined in `todo.spec.ts`.
-
