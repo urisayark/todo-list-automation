@@ -1,4 +1,3 @@
-
 # Todo List Automation Testing
 
 Automated UI testing for the [React TodoMVC demo](https://demo.playwright.dev/todomvc/) using Playwright and TypeScript.
@@ -114,3 +113,7 @@ npx playwright show-report
 ## Design Approach
 
 The Page Object Model separates page interactions from test scenarios. Reusable methods are maintained in `TodoPage.ts`, while test scenarios and assertions are defined in `todo.spec.ts`.
+
+## Test Results
+
+All 12 automated test cases passed in Chromium in the latest local test run.
